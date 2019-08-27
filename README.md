@@ -49,4 +49,6 @@ That's a tricky question. It really depends on the use cases. I am pretty sure I
 
 # Deployment flow
 
-I'd love to use drone.io for CD, however I am perfectly fine with Travis or any other solution. Drone is based on Docker, so the flow is pretty simple. Build app. Build docker image. Deploy container. Run tests & healthchecks. Swap with production container (zero downtime deployment).
+I'd love to use drone.io for CD, however I am perfectly fine with Travis or any other solution. Drone is based on Docker, so the flow is pretty simple. Build app. Build docker image. Deploy container. Run tests & healthchecks. Swap with production container (zero downtime deployment).
+
+![Mocha Tests](https://imgur.com/E58v54f.png)
