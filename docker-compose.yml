@@ -1,0 +1,52 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: terminalco
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - terminalco
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8881:8080
+    networks:
+      - terminalco
+
+  postgraphile:
+    build: ./postgraphile
+    networks:
+      - terminalco
+    ports:
+      - 3003:3000
+    environment:
+      DATABASE_URL: postgres://postgres:terminalco@db:5432/terminal
+
+  graphql:
+    build: ./graphql
+    networks:
+      - terminalco
+    ports:
+      - 3004:4000
+    environment:
+      DATABASE_URL: postgres://postgres:terminalco@db:5432/terminal
+
+  importer:
+    build: ./importer
+    environment:
+      DB_NAME: terminal
+      DB_HOST: db
+      DB_PASS: terminalco
+      DB_SCHEMA: public
+    networks:
+      - terminalco
+volumes:
+  pgdata:
+
+networks:
+  terminalco:
