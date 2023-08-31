@@ -45,7 +45,7 @@ SELECT * FROM token_transfers WHERE to_address = '0x262317ebca6339aa5fdcc38aa471
 
 # Dream Stack
 *If you had to offer the service as a production application, what stack/tools would you use?*
-That's a tricky question. It really depends on the use cases. I am pretty sure I'd use Javascript :-). So React for frontend, Node for APIs and microservices. I can image that I'd use multiple databases (Postgres for aggregations, Mongo for key based querying and Neo4j for graph ops).
+That's a tricky question. It really depends on the use cases. I am pretty sure I'd use ~~Javascript~~ Rust :-). So React for frontend, Node/Rust for APIs and microservices. I can image that I'd use multiple databases (Postgres for aggregations, Mongo for key based querying and Neo4j for graph ops).
 
 # Deployment flow
 
